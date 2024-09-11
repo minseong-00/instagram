@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>지뢰찾기</title>
+    <style>
+        *{text-align: center;}
+        #board{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #board tr td{
+            height: 16px;
+            width: 16px;
+            border: 1px auto gray;
+            background-color: aquamarine;
+        }
+
+        #board tr td.clicked{
+            background-color: blueviolet;
+        }
+
+        #board tr td.bomb{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>지뢰찾기</h2>
+    <table id ='board'></table>
+    <button>새로운 게임</button>
+    <script>
+        let obj = document.getElementById('board');
+        genGrid();
+        function genGrid(){
+            obj.innerHTML='';
+            for(let i=0; i<8; i++){
+                row = obj.insertRow(i);
+                for(var j=0; j<8; j++){
+                    cell = row.insertCell(j);
+                    cell.onclick = function(){
+                        clickBox(this);
+                    }
+                    bomb = (Math.random() < 0.3)?'true':'false';
+                    var a_bomb = document.createAttribute('bomb')
+                    a_bomb.value = bomb;
+                    cell.setAttributeNode(a_bomb);
+                }
+            }
+        }
+
+        function clickBox(cell){
+            if(cell.getAttribute('bomb') == 'true') {
+                cell.className ='bomb';
+                alert('너 지뢰 밟음')
+            }
+            else{
+                cell.className = "clicked";
+            }
+            cell.className = 'clicked';
+        }
+    </script>
+</body>
+</html>

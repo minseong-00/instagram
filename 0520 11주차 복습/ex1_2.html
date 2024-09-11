@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function getvalue(){
+            let obj1 = document.myform.r.value;
+            let obj = document.getElementsByName('color');
+            let result = 0;
+            
+            for (let i =0; i< obj.length; i++) {
+                if (obj[i].checked) {
+                    if(i==0){
+                        // 면적 계산
+                        result = Math.PI * Math.pow(obj1, 2);
+                    } else{
+                        // 부피 계산
+                        result = (4.0/3.0)* Math.PI * Math.pow(obj1, 3);
+                    }
+                }
+            }
+            document.getElementById('result').value = result;
+        }
+    </script>
+</head>
+<body>
+    <form name="myform">
+        반지름
+        <input type="text" id="target" name="r">
+        <input type="radio" name="color" value="area" checked>면적
+        <input type="radio" name="color" value="volume">부피<br>
+    </form>
+    <input type="button" value="계산" onclick="getvalue()">연산결과
+    <input type="text" id="result" value="">
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱 태그의 사용</title>
+    <style>
+        html, body {height: 100%;}
+        header {background-color: yellow;}
+        nav {float:left;
+            width: 30%;
+            height: 50%;
+            background: orange;}
+        section {float: left;
+                width: 70%; height: 50%;
+                background-color: peachpuff;}
+        aside {clear:both;
+                height: 20%;
+                background-color: aquamarine;}
+        footer {height: 10%;
+                background-color: bisque;}        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>문서의 주제목</h1>
+        <p>문서의 주제목입니다.</p>
+    </header>
+    <nav>
+        <h2>네비게이션의 목차</h2>
+        <ul>
+            <li><a href="#HTML"></a>HTML5</li>
+            <li><a href="#CSS"></a>CSS3</li>
+            <li><a href="#js"></a>JAVASCRIPT</li>
+        </ul>
+    </nav>
+    <section>
+        <article id = "html">
+            <h2>섹션영역 - HTML5</h2>
+            <p>HTML을 이용하여 문서의 구조와 내용을 기술합니다</p>
+        </article id = "css">
+        <article>
+            <h2>섹션영역 - CSS3</h2>
+            <p>css을 이용하여 문서의 스타일을 기술합니다</p>
+        </article>
+        <article id = "js">
+            <h2>섹션영역 - JAVASCRIPT</h2>
+            <p>JAVASCRIPT을 이용하여 문서의 동작을 기술합니다</p>
+        </article>
+    </section>
+    <aside>
+        <h2>부가정보제공</h2>
+        <p>부가정보를 제공하는 곳입니다</p>
+    </aside>
+    <footer>
+        <p>Author: 홍길동 <a href="mailto:a@gmail.com">a@gmail.com</a></p>
+    </footer>
+</body>
+</html>
